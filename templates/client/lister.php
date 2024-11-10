@@ -14,7 +14,7 @@ foreach ($lesClients as $unClient)
 {
     echo    "<tr>
                 <td>".$unClient["id"]."</td>
-                <td><a href=client.php?idClient=" .$unClient["id"] .">" . $unClient["nom"]."</a></td>
+                <td><a href=consulter.php?idClient=" .$unClient["id"] .">" . $unClient["nom"]."</a></td>
                 <td>".$unClient["prenom"]."</td>
             </tr>"; 
 }
