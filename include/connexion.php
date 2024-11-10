@@ -59,7 +59,7 @@ public function getLesClients(){
  * @param $id
  * @return un client dont l'id est passé en paramètre
 */
-public function getClient($id){
+public function getLeClient($id){
 	// Préparation de la requête avec un paramètre pour l'id du client
     $req = "SELECT id, nom, prenom FROM client WHERE id = :id";
 

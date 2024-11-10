@@ -1,13 +1,17 @@
 <?php
 
+//require_once permet d'inclure et d'exécuter le code du fichier connexion.php
 require_once ("../../include/connexion.php");
 
-
+//Etablit à la connexion à la base de données
 $pdo = PdoZakpark::getPdoZakpark();
+
+// permet de récupérer les data de la requête de la fonction getLesClients définie dans include/connexion.php
 $lesClients = $pdo->getLesClients();
 
+//Affiche les informations en html
+// la Ligne 21 contient un lien vers la page consulter.php et passe le paramètre idClient et sa valeur
 echo "<h1> LISTE DES CLIENTS </h1>";
-
 echo "<table> <tr><th>numéro</th><th>nom</th><th>prenom</th></tr>";
 
 foreach ($lesClients as $unClient)
