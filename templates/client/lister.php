@@ -1,5 +1,13 @@
 <?php
 
+/** 
+ * Page permettant de lister les clients
+ *
+ * @package default
+ * @author Zakina
+ * @version  1.0
+ */
+
 //require_once permet d'inclure et d'exécuter le code du fichier connexion.php
 require_once ("../../include/connexion.php");
 

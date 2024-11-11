@@ -1,5 +1,14 @@
 <?php
 
+/** 
+ * Page permettant de consulter un client
+ * l'idClient est passé dans la variable $_GET depuis la page lister
+ *
+ * @package default
+ * @author Zakina
+ * @version  1.0
+ */
+
 //require_once permet d'inclure et d'exécuter le code du fichier connexion.php
 require_once ("../../include/connexion.php");
 
