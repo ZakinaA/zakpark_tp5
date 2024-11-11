@@ -8,45 +8,14 @@
  */
 
  class PdoZakpark{   		
-	/*private static $serveur='mysql:host=employes.sio.bts;port=3306';
-	private static $bdd='dbname=zacpark';   		
-	private static $user='zannouche' ;    		
-	private static $mdp='mpZannouche' ;	*/
 
 	private static $serveur='mysql:host=localhost;port=3307';
 	private static $bdd='dbname=zakpark';   		
 	private static $user='root' ;    		
 	private static $mdp='' ;	
-	
-  private static $myPdo;
-  private static $myPdoZakpark=null;
-/**
-* Constructeur privé, crée l'instance de PDO qui sera sollicitée
-* pour toutes les méthodes de la classe
-*/				
-private function __construct(){
-  PdoZakpark::$myPdo = new PDO(PdoZakpark::$serveur.';'.PdoZakpark::$bdd, PdoZakpark::$user, PdoZakpark::$mdp); 
-  PdoZakpark::$myPdo->query("SET CHARACTER SET utf8");
-}
+  	private static $myPdo;
+	private static $myPdoZakpark=null;
 
-
-	
-public function _destruct(){
-		PdoZakpark::$myPdo = null;
-	
-}
-
-/**
- * Fonction statique qui crée l'unique instance de la classe
- * Appel : $instancePdoZakpark = PdoZakpark::getPdoZakpark();
- * @return l'unique objet de la classe PdoZakpark
- */
-	public  static function getPdoZakpark(){
-		if(PdoZakpark::$myPdoZakpark==null){
-			PdoZakpark::$myPdoZakpark= new PdoZakpark();
-		}
-		return PdoZakpark::$myPdoZakpark;  
-	}
 
 
 /**
@@ -85,5 +54,36 @@ public function getLeClient($id){
     return $client;
 }
 
+
+/**Méthodes de connexion à la classe, nettoyage*********************************************************************************** */
+
+
+/**
+* Constructeur privé, crée l'instance de PDO qui sera sollicitée
+* pour toutes les méthodes de la classe
+*/				
+private function __construct(){
+	PdoZakpark::$myPdo = new PDO(PdoZakpark::$serveur.';'.PdoZakpark::$bdd, PdoZakpark::$user, PdoZakpark::$mdp); 
+	PdoZakpark::$myPdo->query("SET CHARACTER SET utf8");
+  }
+  
+  
+	  
+  public function _destruct(){
+		  PdoZakpark::$myPdo = null;
+	  
+  }
+  
+  /**
+   * Fonction statique qui crée l'unique instance de la classe
+   * Appel : $instancePdoZakpark = PdoZakpark::getPdoZakpark();
+   * @return l'unique objet de la classe PdoZakpark
+   */
+	  public  static function getPdoZakpark(){
+		  if(PdoZakpark::$myPdoZakpark==null){
+			  PdoZakpark::$myPdoZakpark= new PdoZakpark();
+		  }
+		  return PdoZakpark::$myPdoZakpark;  
+	  }
 }
 ?>
