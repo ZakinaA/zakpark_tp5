@@ -21,6 +21,7 @@ $pdo = PdoZakpark::getPdoZakpark();
 $leClient = $pdo->getLeClient($id);
 
 //Affiche les informations en html
+include ("../entete.php");
 
 echo "<h1> INFORMATIONS CLIENT </h1>";
 
@@ -29,6 +30,6 @@ echo "<tr><td> Nom :</td><td>".$leClient["nom"]."</td></tr>";
 echo "<tr><td> Prénom :</td><td>".$leClient["prenom"]."</td></tr>";
 echo "</table>";             
 
-  
+include ("../pied-page.php");
 
 ?>

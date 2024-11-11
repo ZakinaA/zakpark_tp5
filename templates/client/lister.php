@@ -11,6 +11,8 @@ $lesClients = $pdo->getLesClients();
 
 //Affiche les informations en html
 // la Ligne 21 contient un lien vers la page consulter.php et passe le paramètre idClient et sa valeur
+
+include ("../entete.php");
 echo "<h1> LISTE DES CLIENTS </h1>";
 echo "<table> <tr><th>numéro</th><th>nom</th><th>prenom</th></tr>";
 
@@ -22,6 +24,8 @@ foreach ($lesClients as $unClient)
                 <td>".$unClient["prenom"]."</td>
             </tr>"; 
 }
-echo "</table>" ;   
+echo "</table>" ;  
+
+include ("../pied-page.php");
 
 ?>

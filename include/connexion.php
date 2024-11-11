@@ -8,10 +8,16 @@
  */
 
  class PdoZakpark{   		
+	/*private static $serveur='mysql:host=employes.sio.bts;port=3306';
+	private static $bdd='dbname=zacpark';   		
+	private static $user='zannouche' ;    		
+	private static $mdp='mpZannouche' ;	*/
+
 	private static $serveur='mysql:host=localhost;port=3307';
 	private static $bdd='dbname=zakpark';   		
 	private static $user='root' ;    		
 	private static $mdp='' ;	
+	
   private static $myPdo;
   private static $myPdoZakpark=null;
 /**
@@ -48,7 +54,7 @@ public function _destruct(){
  * @return les champs id, nom et prenom des clients  
  */
 public function getLesClients(){
-	$req = "select id, nom, prenom from client";	
+	$req = "select id, nom, prenom from Client";	
 	$res = PdoZakpark::$myPdo->query($req);
 	$lesClients = $res->fetchAll();
 	return $lesClients; 
@@ -61,7 +67,7 @@ public function getLesClients(){
 */
 public function getLeClient($id){
 	// Préparation de la requête avec un paramètre pour l'id du client
-    $req = "SELECT id, nom, prenom FROM client WHERE id = :id";
+    $req = "SELECT id, nom, prenom FROM Client WHERE id = :id";
 
     // Préparation de la requête
     $stmt = PdoZakpark::$myPdo->prepare($req);
